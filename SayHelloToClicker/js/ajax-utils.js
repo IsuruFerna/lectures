@@ -15,6 +15,7 @@ else {
     global.alart("Ajax is not supported!")
     return(null);
 }
+}
 
 // Makes an Ajax GET request to 'requestUrl'
 ajaxUtils.sendGetRequest = function(requestUrl, responseHandler){
