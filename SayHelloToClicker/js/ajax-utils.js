@@ -31,7 +31,7 @@ ajaxUtils.sendGetRequest = function(requestUrl, responseHandler){
 // function if response is ready
 // and not an error
 function handleResponse(request, responseHandler) {
-    if((request.readyState == 4) && (request.readyState == 200)) {
+    if((request.readyState == 4) && (request.state == 200)) {
         responseHandler(request)
     }
 }
