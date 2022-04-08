@@ -7,7 +7,7 @@ function(event){
     .addEventListener("click", function () {
 
         // Call server to get the name
-        $ajaxUtils.sendGetRequest("/data/name.txt", 
+        $ajaxUtils.sendGetRequest("/data/names.txt", 
         function(request){
             var name = request.responseText;
         
