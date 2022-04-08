@@ -7,9 +7,9 @@ function getRequestObject() {
     if (window.XMLHttpRequest) {
         return(new XMLHttpRequest());
     } 
-    else if (window.ActiveObject) {
+    else if (window.ActiveXObject) {
     // For very old IE browsers (optional)
-    return (new ActiveObject("Microsoft.XMLHTTP"));
+    return (new ActiveXObject("Microsoft.XMLHTTP"));
 }
 else {
     global.alart("Ajax is not supported!")
