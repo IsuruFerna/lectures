@@ -19,11 +19,11 @@
     ajaxUtils.sendGetRequest = function(requestUrl, responseHandler){
         var request = getRequestObject();
         request.onreadystatechange = function(){
-            handleResponse(request, responseHandler)
+            handleResponse(request, responseHandler);
         };
         request.open("GET", requestUrl, true);
         request.send(null); // for POST only
-    }
+    };
 
     // Only calls user provided 'responseHandler'
     // function if response is ready
