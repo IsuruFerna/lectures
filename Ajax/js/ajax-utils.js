@@ -4,10 +4,10 @@
 
     // Returns an HTTP request object
     function getRequestObject(){
-        if(window.XMLHttpRequest){
+        if(global.XMLHttpRequest){
             return (new XMLHttpRequest());
         }
-        else if (window.ActiveXObject) {
+        else if (global.ActiveXObject) {
             return (new ActiveXObject("Microsoft.XMLHTTP"));
         }
         else {
@@ -33,4 +33,7 @@
             responseHandler(request);
         }
     }
-})
+
+    // Expose utility to the global object
+    global.$ajaxUtils = ajaxUtils;
+})(window);
