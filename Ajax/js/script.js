@@ -1,6 +1,5 @@
 // Event handling
-document.addEventListener("DOMContentLoaded", 
-function(event){
+document.addEventListener("DOMContentLoaded", function(event){
 
     // unobstructive event binding
     document.querySelector("button")
