@@ -33,7 +33,7 @@
     // function is response is ready
     // and not an error
     function handleRespone(request, responseHandler, isJsonResponse) {
-        if ((request.readyState == 4) && (request.Status == 200)) {
+        if ((request.readyState == 4) && (request.status == 200)) {
             // Default to isJasonResponse = true
             if (isJsonResponse == undefined) {
                 isJsonResponse = true;
