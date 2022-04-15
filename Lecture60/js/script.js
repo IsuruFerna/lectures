@@ -30,6 +30,13 @@ $(function () { // Same as document.addEventListener("DOMContentLoaded"...
     targetElem.innerHTML = html;
   };
 
+  // Show loading icon inside element identified by 'selector'.
+  var showLoading = function (selector) {
+    var html = "<div class='text-center'>";
+    html += "<img src='images/ajax-loader.gif'></div>";
+    insertHtml(selector, html);
+  };
+
   // On page load (before images or CSS)
   document.addEventListener("DOMContentLoaded", function (event){
 
