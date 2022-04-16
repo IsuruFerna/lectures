@@ -19,37 +19,40 @@ $(function () { // Same as document.addEventListener("DOMContentLoaded"...
   });
 });
 
-(function (global){
-  var dc = {};
+(function (global) {
 
-  var homeHtml = "snippets/home-snippets.html";
+var dc = {};
 
-  // Convenience function for inserting innerHTML for 'select'
-  var insertHtml = function (selector, html) {
-    var targetElem = document.querySelector(selector);
-    targetElem.innerHTML = html;
-  };
+var homeHtml = "snippets/home-snippet.html";
 
-  // Show loading icon inside element identified by 'selector'.
-  var showLoading = function (selector) {
-    var html = "<div class='text-center'>";
-    html += "<img src='images/ajax-loader.gif'></div>";
-    insertHtml(selector, html);
-  };
+// Convenience function for inserting innerHTML for 'select'
+var insertHtml = function (selector, html) {
+  var targetElem = document.querySelector(selector);
+  targetElem.innerHTML = html;
+};
 
-  // On page load (before images or CSS)
-  document.addEventListener("DOMContentLoaded", function (event){
+// Show loading icon inside element identified by 'selector'.
+var showLoading = function (selector) {
+  var html = "<div class='text-center'>";
+  html += "<img src='images/ajax-loader.gif'></div>";
+  insertHtml(selector, html);
+};
 
-    // On first load, show home view
-    showLoading("#main-content");
-    $ajaxUtlis.sendGetRequest(
-      homeHtml,
-      function (responseText){
-        document.querySelector("#main-content").innerHTML = responseText;
-      },
-  flase);
-  });
+// On page load (before images or CSS)
+document.addEventListener("DOMContentLoaded", function (event) {
+
+// On first load, show home view
+showLoading("#main-content");
+$ajaxUtils.sendGetRequest(
+  homeHtml,
+  function (responseText) {
+    document.querySelector("#main-content")
+      .innerHTML = responseText;
+  },
+  false);
+});
+
 
 global.$dc = dc;
 
-})(window)
+})(window);
